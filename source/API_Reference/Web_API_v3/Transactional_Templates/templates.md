@@ -29,6 +29,35 @@ Create a template.
 {% endparameters %}
 
 {% apiv3example post POST https://api.sendgrid.com/v3/templates name=example_name %}
+{
+  "name":"example template name",
+  "to": [
+    "alice@sendgrid.com",
+    "bob@sendgrid.com"
+  ],
+  "sub": {
+    ":name": [
+      "Alice",
+      "Bob"
+    ],
+    ":price": [
+      "$4",
+      "$4"
+    ]
+  },
+  "category": [
+    "Promotions"
+  ],
+  "filters": {
+    "templates": {
+      "settings": {
+        "enable": 1,
+        "template_id": "60414495-6787-441b-8b08-3979499bba7a"
+      }
+    }
+  }
+}
+{% apiv3example %}
   {% v3response %}
 HTTP/1.1 201 OK
 
